@@ -14,4 +14,6 @@ public class ApplicationDbContext : IdentityDbContext
 public DbSet<GroupFind.Data.Models.Category> Category { get; set; } = default!;
 
 public DbSet<GroupFind.Data.Models.Event> Event { get; set; } = default!;
+
+public DbSet<GroupFind.Data.Models.User> User { get; set; } = default!;
 }
