@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using GroupFind.Data.Models;
 
 namespace GroupFind.Data;
 
@@ -9,4 +10,6 @@ public class ApplicationDbContext : IdentityDbContext
         : base(options)
     {
     }
+
+public DbSet<GroupFind.Data.Models.Category> Category { get; set; } = default!;
 }
