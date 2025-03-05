@@ -1,0 +1,83 @@
+﻿@page
+@model GroupFind.Pages.Events.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Event</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Event.EventID" />
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label asp-for="Event.CreatorID" class="control-label"></label>
+                <select asp-for="Event.CreatorID" class="form-control" asp-items="ViewBag.CreatorID"></select>
+                <span asp-validation-for="Event.CreatorID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label asp-for="Event.CategoryID" class="control-label"></label>
+                <select asp-for="Event.CategoryID" class="form-control" asp-items="ViewBag.CategoryID"></select>
+                <span asp-validation-for="Event.CategoryID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label asp-for="Event.EventTitle" class="control-label"></label>
+                <input asp-for="Event.EventTitle" class="form-control" />
+                <span asp-validation-for="Event.EventTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label asp-for="Event.EventStartDateTime" class="control-label"></label>
+                <input asp-for="Event.EventStartDateTime" class="form-control" />
+                <span asp-validation-for="Event.EventStartDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label asp-for="Event.EventEndDateTime" class="control-label"></label>
+                <input asp-for="Event.EventEndDateTime" class="form-control" />
+                <span asp-validation-for="Event.EventEndDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label asp-for="Event.City" class="control-label"></label>
+                <input asp-for="Event.City" class="form-control" />
+                <span asp-validation-for="Event.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label asp-for="Event.Country" class="control-label"></label>
+                <input asp-for="Event.Country" class="form-control" />
+                <span asp-validation-for="Event.Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label asp-for="Event.Address" class="control-label"></label>
+                <input asp-for="Event.Address" class="form-control" />
+                <span asp-validation-for="Event.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Event.SignupLinkFromCreator" class="control-label"></label>
+                <input asp-for="Event.SignupLinkFromCreator" class="form-control" />
+                <span asp-validation-for="Event.SignupLinkFromCreator" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
